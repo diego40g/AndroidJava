@@ -77,12 +77,12 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="consultaC"
         android:text="Consulta por código"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn1_Crear"
-        android:onClick="consultaC"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn1_Crear" />
 
     <Button
         android:id="@+id/btn3_Descripción"
@@ -92,12 +92,12 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="consultaD"
         android:text="Consultar por descripción"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn2_Codigo"
-        android:onClick="consultaD"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn2_Codigo" />
 
     <Button
         android:id="@+id/btn4_Eliminar"
@@ -107,12 +107,12 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="eliminar"
         android:text="Eliminar por código"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn3_Descripción"
-        android:onClick="eliminar"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn3_Descripción" />
 
     <Button
         android:id="@+id/btn5_Modificar"
@@ -122,10 +122,38 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="modificar"
         android:text="Modificar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn4_Eliminar"
-        android:onClick="modificar"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn4_Eliminar" />
+
+    <Button
+        android:id="@+id/btn6_mostrar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:onClick="mostrar"
+        android:text="Mostrar todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn5_Modificar" />
+
+    <ScrollView
+        android:layout_width="47dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="363dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
