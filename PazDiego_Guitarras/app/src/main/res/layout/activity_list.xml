@@ -23,8 +23,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="Button"
+        android:onClick="ir_atras"
+        android:text="Menu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="back"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

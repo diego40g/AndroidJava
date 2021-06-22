@@ -114,22 +114,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mostrar(View v) {
-        AdminSQLOpenHelper admin = new AdminSQLOpenHelper(this,
-                "administracion", null, 1);
-        SQLiteDatabase bd = admin.getWritableDatabase();
-        String cod = et1.getText().toString();
-        Cursor fila = bd.rawQuery(
-                "select * from articulos", null);
 
-        if (fila.moveToFirst()) {
-            et2.setText(fila.getString(0));
-            et3.setText(fila.getString(1));
             Intent intent = new Intent(MainActivity.this, ListActivity.class);
-            intent.putExtra("guitarras",fila.toString());
             startActivity(intent);
-        } else
-            Toast.makeText(this, "No existe un artículo con dicho código",
-                    Toast.LENGTH_SHORT).show();
-        bd.close();
+
     }
 }

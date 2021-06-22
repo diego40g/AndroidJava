@@ -3,6 +3,8 @@ package com.dipaz.pazdiego_guitarras;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -15,13 +17,31 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        Bundle bundle = getIntent().getExtras();
-        String dato = bundle.getString("guitarras");
         te1=findViewById(R.id.textView);
-        te1.setText(dato);
+        AdminSQLOpenHelper admin = new AdminSQLOpenHelper(this,
+                "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        Cursor fila = bd.rawQuery(
+                "select * from articulos", null);
+        String cadena="";
+        fila.moveToFirst();
+        while (true){
+            if(fila.moveToNext()){
+            System.out.println("gutiarra:" + fila.getString(1));
+                cadena = cadena + fila.getString(0).toString();
+                cadena = cadena + "\t";
+                cadena = cadena + fila.getString(1).toString();
+                cadena = cadena + "\t";
+                cadena = cadena + fila.getString(2).toString();
+                cadena = cadena + "\n";
+            }
+            else{break;}
+        }
+        te1.setText(cadena);
+        bd.close();
     }
 
-    public void mostrar(View v) {
+    public void ir_atras(View v) {
         Intent intent = new Intent(ListActivity.this, MainActivity.class);
         startActivity(intent);
     }
