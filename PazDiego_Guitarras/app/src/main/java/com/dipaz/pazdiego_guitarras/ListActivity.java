@@ -23,7 +23,7 @@ public class ListActivity extends AppCompatActivity {
         SQLiteDatabase bd = admin.getWritableDatabase();
         Cursor fila = bd.rawQuery(
                 "select * from articulos", null);
-        String cadena="codigo\tmodelo\tprecio";
+        String cadena="codigo\tmodelo\tprecio\n";
         fila.moveToFirst();
         while (true){
             if(fila.moveToNext()){
